@@ -8,13 +8,12 @@ import { TranslateService, TranslateModule } from "@ngx-translate/core";
 import { LoadingController } from "@ionic/angular";
 
 @Component({
-  selector: "app-home",
-  templateUrl: "home.page.html",
-  styleUrls: ["home.page.scss"],
+  selector: "app-not-found",
+  templateUrl: "./not-found.page.html",
   imports: [IonHeader, IonContent, IonGrid, IonRow, IonCol, IonButton, IonText, TranslateModule],
-  providers: [LoadingController],
+  styleUrls: ["./not-found.page.scss"],
 })
-export class HomePage {
+export class NotFoundPage {
   public selectedLanguage: string = "en";
   public doAnimation: boolean = true;
 

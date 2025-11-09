@@ -5,7 +5,7 @@
 <ion-header>
   <ion-row style="border-bottom: #ffffff 2px solid">
     <ion-col size="3">
-      <ion-button expand="block" fill="clear" class="headerButton animatedButton" (click)="changePage('')">
+      <ion-button expand="block" fill="clear" class="headerButton animatedButton" (click)="changePage('home')">
         <ion-text class="headerText">{{ 'HOME' | translate }}</ion-text>
       </ion-button>
     </ion-col>
@@ -47,6 +47,12 @@
 
 <ion-content>
   <ion-grid>
-    <ion-row> </ion-row>
+    <ion-row>
+      <ion-col class="not-found-col" size="12">
+        <ion-card class="not-found-card">
+          <ion-text class="not-found-text">{{ 'NOT_FOUND_MESSAGE' | translate }}</ion-text>
+        </ion-card>
+      </ion-col>
+    </ion-row>
   </ion-grid>
 </ion-content>
