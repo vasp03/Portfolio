@@ -26,7 +26,7 @@ export class HomePage {
     this.updateLanguageUnderline(this.selectedLanguage);
   }
 
-  public changePage(page: string) {
+  public changePage(page: string = "") {
     const overlay = document.getElementById("loading-overlay");
     if (overlay && this.doAnimation) {
       const animation = overlay.animate([{ transform: "translateX(-100%)" }, { transform: "translateX(0%)" }], {
