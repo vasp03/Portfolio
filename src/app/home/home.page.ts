@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { IonHeader, IonContent, IonCol, IonGrid, IonRow, IonButton, IonText } from "@ionic/angular/standalone";
+import { IonHeader, IonContent, IonCol, IonGrid, IonRow, IonButton, IonText, IonTitle, IonCard } from "@ionic/angular/standalone";
 
 import { addIcons } from "ionicons";
 import { closeOutline } from "ionicons/icons";
@@ -11,12 +11,13 @@ import { LoadingController } from "@ionic/angular";
   selector: "app-home",
   templateUrl: "home.page.html",
   styleUrls: ["home.page.scss"],
-  imports: [IonHeader, IonContent, IonGrid, IonRow, IonCol, IonButton, IonText, TranslateModule],
+  imports: [IonHeader, IonContent, IonGrid, IonRow, IonCol, IonButton, IonText, TranslateModule, IonTitle, IonCard],
   providers: [LoadingController],
 })
 export class HomePage {
   public selectedLanguage: string = "en";
   public doAnimation: boolean = true;
+  private changingPageInProgress: boolean = false;
 
   constructor(private translate: TranslateService, private loadingCtrl: LoadingController) {
     addIcons({ closeOutline });
@@ -27,6 +28,10 @@ export class HomePage {
   }
 
   public changePage(page: string = "") {
+    if (this.changingPageInProgress) return;
+
+    this.changingPageInProgress = true;
+
     const overlay = document.getElementById("loading-overlay");
     if (overlay && this.doAnimation) {
       const animation = overlay.animate([{ transform: "translateX(-100%)" }, { transform: "translateX(0%)" }], {

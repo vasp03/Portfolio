@@ -7,5 +7,6 @@
   "ANIMATION_TOGGLE": "Animationen är",
   "ANIMATION_ON": "på",
   "ANIMATION_OFF": "av",
-  "NOT_FOUND_MESSAGE": "Sidan du letar efter kunde inte hittas."
+  "NOT_FOUND_TITLE": "Sidan kunde inte hittas",
+  "NOT_FOUND_MESSAGE": "Sidan du letar efter kunde inte hittas. Kontakta vasp23@protonmail.com om du tror att detta är ett misstag."
 }

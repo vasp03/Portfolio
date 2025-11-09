@@ -1,3 +1,5 @@
+@use "../../theme/animatedButtons.scss" as *;
+
 .headerButton {
   color: #ffffff;
   font-size: 1.5em;
@@ -64,5 +66,17 @@
   --background: transparent;
   border: #ffffff 2px solid;
   box-shadow: none;
-  text-align: center;
+  text-align: left;
+  padding: 2vh;
+}
+
+.not-found-title {
+  color: #ffffff;
+  font-size: 4vh;
+  margin-bottom: 2vh;
+  text-align: left;
+}
+
+.animatedButton {
+  @include animatedButton;
 }

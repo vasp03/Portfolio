@@ -47,6 +47,19 @@
 
 <ion-content>
   <ion-grid>
-    <ion-row> </ion-row>
+    <ion-row class="breadPadding">
+      <ion-col size="4">
+        <ion-card class="breadCard">
+          <ion-title class="breadCardTitle">{{ 'NOT_FOUND_TITLE' | translate }}</ion-title>
+          <ion-text class="breadCardText">{{ 'NOT_FOUND_MESSAGE' | translate }}</ion-text>
+        </ion-card>
+      </ion-col>
+      <ion-col size="8">
+        <ion-card class="breadCard">
+          <ion-title class="breadCardTitle">{{ 'NOT_FOUND_TITLE' | translate }}</ion-title>
+          <ion-text class="breadCardText">{{ 'NOT_FOUND_MESSAGE' | translate }}</ion-text>
+        </ion-card>
+      </ion-col>
+    </ion-row>
   </ion-grid>
 </ion-content>

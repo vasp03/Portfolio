@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { IonHeader, IonContent, IonCol, IonGrid, IonRow, IonButton, IonText, IonCard } from "@ionic/angular/standalone";
+import { IonHeader, IonContent, IonCol, IonGrid, IonRow, IonButton, IonText, IonCard, IonTitle } from "@ionic/angular/standalone";
 
 import { addIcons } from "ionicons";
 import { closeOutline } from "ionicons/icons";
@@ -10,12 +10,15 @@ import { LoadingController } from "@ionic/angular";
 @Component({
   selector: "app-not-found",
   templateUrl: "./not-found.page.html",
-  imports: [IonHeader, IonContent, IonGrid, IonRow, IonCol, IonButton, IonText, TranslateModule, IonCard],
+  imports: [IonHeader, IonContent, IonGrid, IonRow, IonCol, IonButton, IonText, TranslateModule, IonCard, IonTitle],
   styleUrls: ["./not-found.page.scss"],
 })
 export class NotFoundPage {
   public selectedLanguage: string = "en";
   public doAnimation: boolean = true;
+  public currentUrl: string = (window.location.href).split('/').pop() || "";
+
+    private changingPageInProgress: boolean = false;
 
   constructor(private translate: TranslateService, private loadingCtrl: LoadingController) {
     addIcons({ closeOutline });
@@ -26,6 +29,10 @@ export class NotFoundPage {
   }
 
   public changePage(page: string = "") {
+    if (this.changingPageInProgress) return;
+
+    this.changingPageInProgress = true;
+
     const overlay = document.getElementById("loading-overlay");
     if (overlay && this.doAnimation) {
       const animation = overlay.animate([{ transform: "translateX(-100%)" }, { transform: "translateX(0%)" }], {
