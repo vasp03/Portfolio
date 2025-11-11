@@ -3,55 +3,57 @@
 </div>
 
 <ion-header>
-  <ion-row style="border-bottom: #ffffff 2px solid">
-    <ion-col size="3">
-      <ion-button expand="block" fill="clear" class="headerButton animatedButton" (click)="changePage()">
-        <ion-text class="headerText">{{ 'HOME' | translate }}</ion-text>
-      </ion-button>
-    </ion-col>
-    <ion-col size="3">
-      <ion-button expand="block" fill="clear" class="headerButton animatedButton" (click)="changePage('about')">
-        <ion-text class="headerText">{{ 'ABOUT' | translate }}</ion-text>
-      </ion-button>
-    </ion-col>
-    <ion-col size="3">
-      <ion-button expand="block" fill="clear" class="headerButton animatedButton" (click)="changePage('career')">
-        <ion-text class="headerText">{{ 'CAREER' | translate }}</ion-text>
-      </ion-button>
-    </ion-col>
-    <ion-col size="3">
-      <ion-button expand="block" fill="clear" class="headerButton animatedButton" (click)="changePage('contact')">
-        <ion-text class="headerText">{{ 'CONTACT' | translate }}</ion-text>
-      </ion-button>
-    </ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col size="1">
-      <ion-button expand="block" fill="clear" class="headerLanguageButton" id="sv-btn" (click)="onLanguageButtonClick('sv')">
-        <ion-text>Sv</ion-text>
-      </ion-button>
-    </ion-col>
-    <ion-col size="1">
-      <ion-button expand="block" fill="clear" class="headerLanguageButton" id="en-btn" (click)="onLanguageButtonClick('en')">
-        <ion-text>Eng</ion-text>
-      </ion-button>
-    </ion-col>
-    <ion-col size="9"> </ion-col>
-    <ion-col size="1">
-      <ion-button expand="block" fill="clear" class="headerLanguageButton" id="animation-toggle-btn" (click)="animationToggle()">
-        <ion-text class="animation-toggle-text" title="{{'ANIMATION_TOGGLE' | translate}} {{doAnimation ? ('ANIMATION_ON' | translate) : ('ANIMATION_OFF' | translate)}}">Ani</ion-text>
-      </ion-button>
-    </ion-col>
-  </ion-row>
+  <ion-grid>
+    <ion-row style="border-bottom: #ffffff 2px solid">
+      <ion-col size="3">
+        <ion-button expand="block" fill="clear" class="headerButton animatedButton" (click)="changePage('')">
+          <ion-text class="headerText">{{ 'HOME' | translate }}</ion-text>
+        </ion-button>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button expand="block" fill="clear" class="headerButton animatedButton" (click)="changePage('about')">
+          <ion-text class="headerText">{{ 'ABOUT' | translate }}</ion-text>
+        </ion-button>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button expand="block" fill="clear" class="headerButton animatedButton" (click)="changePage('career')">
+          <ion-text class="headerText">{{ 'CAREER' | translate }}</ion-text>
+        </ion-button>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button expand="block" fill="clear" class="headerButton animatedButton" (click)="changePage('contact')">
+          <ion-text class="headerText">{{ 'CONTACT' | translate }}</ion-text>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="1">
+        <ion-button expand="block" fill="clear" class="headerLanguageButton" id="sv-btn" (click)="onLanguageButtonClick('sv')">
+          <ion-text>Sv</ion-text>
+        </ion-button>
+      </ion-col>
+      <ion-col size="1">
+        <ion-button expand="block" fill="clear" class="headerLanguageButton" id="en-btn" (click)="onLanguageButtonClick('en')">
+          <ion-text>Eng</ion-text>
+        </ion-button>
+      </ion-col>
+      <ion-col size="9"> </ion-col>
+      <ion-col size="1">
+        <ion-button expand="block" fill="clear" class="headerLanguageButton" id="animation-toggle-btn" (click)="animationToggle()">
+          <ion-text class="animation-toggle-text" title="{{'ANIMATION_TOGGLE' | translate}} {{doAnimation ? ('ANIMATION_ON' | translate) : ('ANIMATION_OFF' | translate)}}">Ani</ion-text>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-header>
 
 <ion-content>
   <ion-grid>
-    <ion-row>
-      <ion-col class="not-found-col" size="12">
+    <ion-row class="breadPadding">
+      <ion-col size="4" offset="4">
         <ion-card class="not-found-card">
           <ion-title class="not-found-title">{{ 'NOT_FOUND_TITLE' | translate }}</ion-title>
-          <ion-text class="not-found-text">{{ 'NOT_FOUND_MESSAGE' | translate }}</ion-text>
+          <ion-text class="breadCardText">{{ 'NOT_FOUND_TEXT' | translate }}</ion-text>
         </ion-card>
       </ion-col>
     </ion-row>

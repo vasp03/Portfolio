@@ -8,7 +8,7 @@
   "ANIMATION_ON": "på",
   "ANIMATION_OFF": "av",
   "NOT_FOUND_TITLE": "Sidan kunde inte hittas",
-  "NOT_FOUND_MESSAGE": "Sidan du letar efter kunde inte hittas. Kontakta vasp23@protonmail.com om du tror att detta är ett misstag.",
+  "NOT_FOUND_TEXT": "Sidan du letar efter kunde inte hittas. Kontakta vasp23@protonmail.com om du tror att detta är ett misstag. Kan också vara att sidan inte har skapats än.",
   "BREAD_TEXT_1": "Detta är brödtext 1.",
   "BREAD_TEXT_2": "Detta är brödtext 2.",
   "BREAD_TITLE_1": "Brödtitel 1",

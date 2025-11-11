@@ -14,12 +14,7 @@ import { LoadingController } from "@ionic/angular";
   imports: [IonHeader, IonContent, IonGrid, IonRow, IonCol, IonButton, IonText, TranslateModule, IonTitle, IonCard],
   providers: [LoadingController],
 })
-export class HomePage implements AfterViewInit, OnDestroy {
-  private starAnimationFrame: number | null = null;
-  private stars: any[] = [];
-  private starCanvas: HTMLCanvasElement | null = null;
-  private ctx: CanvasRenderingContext2D | null = null;
-  private numStars = 1000;
+export class HomePage {
   public selectedLanguage: string = "en";
   public doAnimation: boolean = true;
   private changingPageInProgress: boolean = false;
@@ -31,82 +26,6 @@ export class HomePage implements AfterViewInit, OnDestroy {
     this.translate.use(this.selectedLanguage);
     this.updateLanguageUnderline(this.selectedLanguage);
   }
-
-  ngAfterViewInit() {
-    this.initStarCanvas();
-    window.addEventListener("resize", this.resizeStarCanvas);
-  }
-
-  ngOnDestroy() {
-    if (this.starAnimationFrame) {
-      cancelAnimationFrame(this.starAnimationFrame);
-    }
-
-    window.removeEventListener("resize", this.resizeStarCanvas);
-  }
-
-  private initStarCanvas = () => {
-    this.starCanvas = document.getElementById("star-canvas") as HTMLCanvasElement;
-    if (!this.starCanvas) return;
-    this.ctx = this.starCanvas.getContext("2d");
-    this.resizeStarCanvas();
-    this.createStars();
-    this.animateStars();
-  };
-
-  private resizeStarCanvas = () => {
-    if (!this.starCanvas) return;
-    this.starCanvas.width = window.innerWidth;
-    this.starCanvas.height = window.innerHeight;
-    this.createStars();
-  };
-
-  private createStars() {
-    if (!this.starCanvas) return;
-
-    this.stars = [];
-    for (let i = 0; i < this.numStars; i++) {
-      this.stars.push({
-        x: Math.random() * this.starCanvas.width,
-        y: Math.random() * this.starCanvas.height,
-        radius: Math.random() * 1.2 + 0.3,
-        speed: Math.random() * 0.15 + 0.05,
-        alpha: Math.random(),
-        alphaChange: (Math.random() - 0.5) * 0.02,
-      });
-    }
-  }
-
-  private animateStars = () => {
-    if (!this.ctx || !this.starCanvas) return;
-
-    this.ctx.clearRect(0, 0, this.starCanvas.width, this.starCanvas.height);
-
-    for (let star of this.stars) {
-      // Twinkle
-      star.alpha += star.alphaChange;
-      if (star.alpha <= 0.2 || star.alpha >= 1) star.alphaChange *= -1;
-
-      // Drift
-      star.y += star.speed;
-      if (star.y > this.starCanvas.height) {
-        star.y = 0;
-        star.x = Math.random() * this.starCanvas.width;
-      }
-
-      this.ctx.save();
-      this.ctx.globalAlpha = star.alpha;
-      this.ctx.beginPath();
-      this.ctx.arc(star.x, star.y, star.radius, 0, 2 * Math.PI);
-      this.ctx.fillStyle = "#fff";
-      this.ctx.shadowColor = "#fff";
-      this.ctx.shadowBlur = 8;
-      this.ctx.fill();
-      this.ctx.restore();
-    }
-
-    this.starAnimationFrame = requestAnimationFrame(this.animateStars);
-  };
 
   public changePage(page: string = "") {
     if (this.changingPageInProgress) return;

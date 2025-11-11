@@ -2,176 +2,178 @@
   <ion-button class="exitLoadingOverlay" size="large" fill="clear" (click)="dismissLoading()"> </ion-button>
 </div>
 
-<canvas id="star-canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 0"></canvas>
-
 <ion-header>
-  <ion-row style="border-bottom: #ffffff 2px solid">
-    <ion-col size="3">
-      <ion-button expand="block" fill="clear" class="headerButton animatedButton" (click)="changePage('')">
-        <ion-text class="headerText">{{ 'HOME' | translate }}</ion-text>
-      </ion-button>
-    </ion-col>
-    <ion-col size="3">
-      <ion-button expand="block" fill="clear" class="headerButton animatedButton" (click)="changePage('about')">
-        <ion-text class="headerText">{{ 'ABOUT' | translate }}</ion-text>
-      </ion-button>
-    </ion-col>
-    <ion-col size="3">
-      <ion-button expand="block" fill="clear" class="headerButton animatedButton" (click)="changePage('career')">
-        <ion-text class="headerText">{{ 'CAREER' | translate }}</ion-text>
-      </ion-button>
-    </ion-col>
-    <ion-col size="3">
-      <ion-button expand="block" fill="clear" class="headerButton animatedButton" (click)="changePage('contact')">
-        <ion-text class="headerText">{{ 'CONTACT' | translate }}</ion-text>
-      </ion-button>
-    </ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col size="1">
-      <ion-button expand="block" fill="clear" class="headerLanguageButton" id="sv-btn" (click)="onLanguageButtonClick('sv')">
-        <ion-text>Sv</ion-text>
-      </ion-button>
-    </ion-col>
-    <ion-col size="1">
-      <ion-button expand="block" fill="clear" class="headerLanguageButton" id="en-btn" (click)="onLanguageButtonClick('en')">
-        <ion-text>Eng</ion-text>
-      </ion-button>
-    </ion-col>
-    <ion-col size="9"> </ion-col>
-    <ion-col size="1">
-      <ion-button expand="block" fill="clear" class="headerLanguageButton" id="animation-toggle-btn" (click)="animationToggle()">
-        <ion-text class="animation-toggle-text" title="{{'ANIMATION_TOGGLE' | translate}} {{doAnimation ? ('ANIMATION_ON' | translate) : ('ANIMATION_OFF' | translate)}}">Ani</ion-text>
-      </ion-button>
-    </ion-col>
-  </ion-row>
-</ion-header>
+    <ion-grid>
+      <ion-row style="border-bottom: #ffffff 2px solid">
+        <ion-col size="3">
+          <ion-button expand="block" fill="clear" class="headerButton animatedButton" (click)="changePage('')">
+            <ion-text class="headerText">{{ 'HOME' | translate }}</ion-text>
+          </ion-button>
+        </ion-col>
+        <ion-col size="3">
+          <ion-button expand="block" fill="clear" class="headerButton animatedButton" (click)="changePage('about')">
+            <ion-text class="headerText">{{ 'ABOUT' | translate }}</ion-text>
+          </ion-button>
+        </ion-col>
+        <ion-col size="3">
+          <ion-button expand="block" fill="clear" class="headerButton animatedButton" (click)="changePage('career')">
+            <ion-text class="headerText">{{ 'CAREER' | translate }}</ion-text>
+          </ion-button>
+        </ion-col>
+        <ion-col size="3">
+          <ion-button expand="block" fill="clear" class="headerButton animatedButton" (click)="changePage('contact')">
+            <ion-text class="headerText">{{ 'CONTACT' | translate }}</ion-text>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="1">
+          <ion-button expand="block" fill="clear" class="headerLanguageButton" id="sv-btn" (click)="onLanguageButtonClick('sv')">
+            <ion-text>Sv</ion-text>
+          </ion-button>
+        </ion-col>
+        <ion-col size="1">
+          <ion-button expand="block" fill="clear" class="headerLanguageButton" id="en-btn" (click)="onLanguageButtonClick('en')">
+            <ion-text>Eng</ion-text>
+          </ion-button>
+        </ion-col>
+        <ion-col size="9"> </ion-col>
+        <ion-col size="1">
+          <ion-button expand="block" fill="clear" class="headerLanguageButton" id="animation-toggle-btn" (click)="animationToggle()">
+            <ion-text class="animation-toggle-text" title="{{'ANIMATION_TOGGLE' | translate}} {{doAnimation ? ('ANIMATION_ON' | translate) : ('ANIMATION_OFF' | translate)}}">Ani</ion-text>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-header>
 
-<ion-grid>
-  <ion-row class="breadPadding">
-    <ion-col size="4">
-      <ion-card class="breadCard">
-        <ion-title class="breadCardTitle">{{ 'BREAD_TITLE_1' | translate }}</ion-title>
-        <ion-text class="breadCardText">{{ 'BREAD_TEXT_1' | translate }}</ion-text>
-      </ion-card>
-    </ion-col>
-    <ion-col size="8">
-      <ion-card class="breadCard">
-        <ion-title class="breadCardTitle">{{ 'BREAD_TITLE_2' | translate }}</ion-title>
-        <ion-text class="breadCardText">{{ 'BREAD_TEXT_2' | translate }}</ion-text>
-      </ion-card>
-    </ion-col>
-  </ion-row>
-  <ion-row class="breadPadding">
-    <ion-col size="4">
-      <ion-card class="breadCard">
-        <ion-title class="breadCardTitle">{{ 'BREAD_TITLE_1' | translate }}</ion-title>
-        <ion-text class="breadCardText">{{ 'BREAD_TEXT_1' | translate }}</ion-text>
-      </ion-card>
-    </ion-col>
-    <ion-col size="8">
-      <ion-card class="breadCard">
-        <ion-title class="breadCardTitle">{{ 'BREAD_TITLE_2' | translate }}</ion-title>
-        <ion-text class="breadCardText">{{ 'BREAD_TEXT_2' | translate }}</ion-text>
-      </ion-card>
-    </ion-col>
-  </ion-row>
-  <ion-row class="breadPadding">
-    <ion-col size="4">
-      <ion-card class="breadCard">
-        <ion-title class="breadCardTitle">{{ 'BREAD_TITLE_1' | translate }}</ion-title>
-        <ion-text class="breadCardText">{{ 'BREAD_TEXT_1' | translate }}</ion-text>
-      </ion-card>
-    </ion-col>
-    <ion-col size="8">
-      <ion-card class="breadCard">
-        <ion-title class="breadCardTitle">{{ 'BREAD_TITLE_2' | translate }}</ion-title>
-        <ion-text class="breadCardText">{{ 'BREAD_TEXT_2' | translate }}</ion-text>
-      </ion-card>
-    </ion-col>
-  </ion-row>
-  <ion-row class="breadPadding">
-    <ion-col size="4">
-      <ion-card class="breadCard">
-        <ion-title class="breadCardTitle">{{ 'BREAD_TITLE_1' | translate }}</ion-title>
-        <ion-text class="breadCardText">{{ 'BREAD_TEXT_1' | translate }}</ion-text>
-      </ion-card>
-    </ion-col>
-    <ion-col size="8">
-      <ion-card class="breadCard">
-        <ion-title class="breadCardTitle">{{ 'BREAD_TITLE_2' | translate }}</ion-title>
-        <ion-text class="breadCardText">{{ 'BREAD_TEXT_2' | translate }}</ion-text>
-      </ion-card>
-    </ion-col>
-  </ion-row>
-  <ion-row class="breadPadding">
-    <ion-col size="4">
-      <ion-card class="breadCard">
-        <ion-title class="breadCardTitle">{{ 'BREAD_TITLE_1' | translate }}</ion-title>
-        <ion-text class="breadCardText">{{ 'BREAD_TEXT_1' | translate }}</ion-text>
-      </ion-card>
-    </ion-col>
-    <ion-col size="8">
-      <ion-card class="breadCard">
-        <ion-title class="breadCardTitle">{{ 'BREAD_TITLE_2' | translate }}</ion-title>
-        <ion-text class="breadCardText">{{ 'BREAD_TEXT_2' | translate }}</ion-text>
-      </ion-card>
-    </ion-col>
-  </ion-row>
-  <ion-row class="breadPadding">
-    <ion-col size="4">
-      <ion-card class="breadCard">
-        <ion-title class="breadCardTitle">{{ 'BREAD_TITLE_1' | translate }}</ion-title>
-        <ion-text class="breadCardText">{{ 'BREAD_TEXT_1' | translate }}</ion-text>
-      </ion-card>
-    </ion-col>
-    <ion-col size="8">
-      <ion-card class="breadCard">
-        <ion-title class="breadCardTitle">{{ 'BREAD_TITLE_2' | translate }}</ion-title>
-        <ion-text class="breadCardText">{{ 'BREAD_TEXT_2' | translate }}</ion-text>
-      </ion-card>
-    </ion-col>
-  </ion-row>
-  <ion-row class="breadPadding">
-    <ion-col size="4">
-      <ion-card class="breadCard">
-        <ion-title class="breadCardTitle">{{ 'BREAD_TITLE_1' | translate }}</ion-title>
-        <ion-text class="breadCardText">{{ 'BREAD_TEXT_1' | translate }}</ion-text>
-      </ion-card>
-    </ion-col>
-    <ion-col size="8">
-      <ion-card class="breadCard">
-        <ion-title class="breadCardTitle">{{ 'BREAD_TITLE_2' | translate }}</ion-title>
-        <ion-text class="breadCardText">{{ 'BREAD_TEXT_2' | translate }}</ion-text>
-      </ion-card>
-    </ion-col>
-  </ion-row>
-  <ion-row class="breadPadding">
-    <ion-col size="4">
-      <ion-card class="breadCard">
-        <ion-title class="breadCardTitle">{{ 'BREAD_TITLE_1' | translate }}</ion-title>
-        <ion-text class="breadCardText">{{ 'BREAD_TEXT_1' | translate }}</ion-text>
-      </ion-card>
-    </ion-col>
-    <ion-col size="8">
-      <ion-card class="breadCard">
-        <ion-title class="breadCardTitle">{{ 'BREAD_TITLE_2' | translate }}</ion-title>
-        <ion-text class="breadCardText">{{ 'BREAD_TEXT_2' | translate }}</ion-text>
-      </ion-card>
-    </ion-col>
-  </ion-row>
-  <ion-row class="breadPadding">
-    <ion-col size="4">
-      <ion-card class="breadCard">
-        <ion-title class="breadCardTitle">{{ 'BREAD_TITLE_1' | translate }}</ion-title>
-        <ion-text class="breadCardText">{{ 'BREAD_TEXT_1' | translate }}</ion-text>
-      </ion-card>
-    </ion-col>
-    <ion-col size="8">
-      <ion-card class="breadCard">
-        <ion-title class="breadCardTitle">{{ 'BREAD_TITLE_2' | translate }}</ion-title>
-        <ion-text class="breadCardText">{{ 'BREAD_TEXT_2' | translate }}</ion-text>
-      </ion-card>
-    </ion-col>
-  </ion-row>
-</ion-grid>
+<ion-content>
+  <ion-grid>
+    <ion-row class="breadPadding">
+      <ion-col size="4">
+        <ion-card class="breadCard">
+          <ion-title class="breadCardTitle">{{ 'BREAD_TITLE_1' | translate }}</ion-title>
+          <ion-text class="breadCardText">{{ 'BREAD_TEXT_1' | translate }}</ion-text>
+        </ion-card>
+      </ion-col>
+      <ion-col size="8">
+        <ion-card class="breadCard">
+          <ion-title class="breadCardTitle">{{ 'BREAD_TITLE_2' | translate }}</ion-title>
+          <ion-text class="breadCardText">{{ 'BREAD_TEXT_2' | translate }}</ion-text>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row class="breadPadding">
+      <ion-col size="4">
+        <ion-card class="breadCard">
+          <ion-title class="breadCardTitle">{{ 'BREAD_TITLE_1' | translate }}</ion-title>
+          <ion-text class="breadCardText">{{ 'BREAD_TEXT_1' | translate }}</ion-text>
+        </ion-card>
+      </ion-col>
+      <ion-col size="8">
+        <ion-card class="breadCard">
+          <ion-title class="breadCardTitle">{{ 'BREAD_TITLE_2' | translate }}</ion-title>
+          <ion-text class="breadCardText">{{ 'BREAD_TEXT_2' | translate }}</ion-text>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row class="breadPadding">
+      <ion-col size="4">
+        <ion-card class="breadCard">
+          <ion-title class="breadCardTitle">{{ 'BREAD_TITLE_1' | translate }}</ion-title>
+          <ion-text class="breadCardText">{{ 'BREAD_TEXT_1' | translate }}</ion-text>
+        </ion-card>
+      </ion-col>
+      <ion-col size="8">
+        <ion-card class="breadCard">
+          <ion-title class="breadCardTitle">{{ 'BREAD_TITLE_2' | translate }}</ion-title>
+          <ion-text class="breadCardText">{{ 'BREAD_TEXT_2' | translate }}</ion-text>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row class="breadPadding">
+      <ion-col size="4">
+        <ion-card class="breadCard">
+          <ion-title class="breadCardTitle">{{ 'BREAD_TITLE_1' | translate }}</ion-title>
+          <ion-text class="breadCardText">{{ 'BREAD_TEXT_1' | translate }}</ion-text>
+        </ion-card>
+      </ion-col>
+      <ion-col size="8">
+        <ion-card class="breadCard">
+          <ion-title class="breadCardTitle">{{ 'BREAD_TITLE_2' | translate }}</ion-title>
+          <ion-text class="breadCardText">{{ 'BREAD_TEXT_2' | translate }}</ion-text>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row class="breadPadding">
+      <ion-col size="4">
+        <ion-card class="breadCard">
+          <ion-title class="breadCardTitle">{{ 'BREAD_TITLE_1' | translate }}</ion-title>
+          <ion-text class="breadCardText">{{ 'BREAD_TEXT_1' | translate }}</ion-text>
+        </ion-card>
+      </ion-col>
+      <ion-col size="8">
+        <ion-card class="breadCard">
+          <ion-title class="breadCardTitle">{{ 'BREAD_TITLE_2' | translate }}</ion-title>
+          <ion-text class="breadCardText">{{ 'BREAD_TEXT_2' | translate }}</ion-text>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row class="breadPadding">
+      <ion-col size="4">
+        <ion-card class="breadCard">
+          <ion-title class="breadCardTitle">{{ 'BREAD_TITLE_1' | translate }}</ion-title>
+          <ion-text class="breadCardText">{{ 'BREAD_TEXT_1' | translate }}</ion-text>
+        </ion-card>
+      </ion-col>
+      <ion-col size="8">
+        <ion-card class="breadCard">
+          <ion-title class="breadCardTitle">{{ 'BREAD_TITLE_2' | translate }}</ion-title>
+          <ion-text class="breadCardText">{{ 'BREAD_TEXT_2' | translate }}</ion-text>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row class="breadPadding">
+      <ion-col size="4">
+        <ion-card class="breadCard">
+          <ion-title class="breadCardTitle">{{ 'BREAD_TITLE_1' | translate }}</ion-title>
+          <ion-text class="breadCardText">{{ 'BREAD_TEXT_1' | translate }}</ion-text>
+        </ion-card>
+      </ion-col>
+      <ion-col size="8">
+        <ion-card class="breadCard">
+          <ion-title class="breadCardTitle">{{ 'BREAD_TITLE_2' | translate }}</ion-title>
+          <ion-text class="breadCardText">{{ 'BREAD_TEXT_2' | translate }}</ion-text>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row class="breadPadding">
+      <ion-col size="4">
+        <ion-card class="breadCard">
+          <ion-title class="breadCardTitle">{{ 'BREAD_TITLE_1' | translate }}</ion-title>
+          <ion-text class="breadCardText">{{ 'BREAD_TEXT_1' | translate }}</ion-text>
+        </ion-card>
+      </ion-col>
+      <ion-col size="8">
+        <ion-card class="breadCard">
+          <ion-title class="breadCardTitle">{{ 'BREAD_TITLE_2' | translate }}</ion-title>
+          <ion-text class="breadCardText">{{ 'BREAD_TEXT_2' | translate }}</ion-text>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row class="breadPadding">
+      <ion-col size="4">
+        <ion-card class="breadCard">
+          <ion-title class="breadCardTitle">{{ 'BREAD_TITLE_1' | translate }}</ion-title>
+          <ion-text class="breadCardText">{{ 'BREAD_TEXT_1' | translate }}</ion-text>
+        </ion-card>
+      </ion-col>
+      <ion-col size="8">
+        <ion-card class="breadCard">
+          <ion-title class="breadCardTitle">{{ 'BREAD_TITLE_2' | translate }}</ion-title>
+          <ion-text class="breadCardText">{{ 'BREAD_TEXT_2' | translate }}</ion-text>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

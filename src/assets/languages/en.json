@@ -8,5 +8,5 @@
   "ANIMATION_ON": "on",
   "ANIMATION_OFF": "off",
   "NOT_FOUND_TITLE": "Page Not Found",
-  "NOT_FOUND_MESSAGE": "The page you are looking for could not be found."
+  "NOT_FOUND_TEXT": "The page you are looking for could not be found. Contact vasp23@protonmail.com if you believe this is a mistake. It may also be that the page has not been created yet."
 }

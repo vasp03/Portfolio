@@ -1,21 +1,11 @@
 
 @use "../../theme/animatedButtons.scss" as *;
-// Starry background canvas
-#star-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 0;
-  pointer-events: none;
-}
 
 .headerButton {
   color: #ffffff;
   font-size: 1.5em;
   background: transparent;
-  height: 3em;
+  height: 2em;
   display: flex;
   text-align: left;
   padding: 0;
