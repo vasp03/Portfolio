@@ -4,11 +4,12 @@ import { IonicRouteStrategy, provideIonicAngular } from "@ionic/angular/standalo
 import { provideHttpClient, withInterceptorsFromDi } from "@angular/common/http";
 import { routes } from "./app/app.routes";
 import { AppComponent } from "./app/app.component";
-import { importProvidersFrom } from "@angular/core";
+import { importProvidersFrom, isDevMode } from "@angular/core";
 import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
 import { TranslateHttpLoader, TRANSLATE_HTTP_LOADER_CONFIG } from "@ngx-translate/http-loader";
 
 import { HttpClient } from "@angular/common/http";
+import { provideServiceWorker } from '@angular/service-worker';
 
 export function HttpLoaderFactory() {
   return new TranslateHttpLoader();
@@ -36,6 +37,9 @@ bootstrapApplication(AppComponent, {
         prefix: "./assets/languages/",
         suffix: ".json",
       },
-    },
+    }, provideServiceWorker('ngsw-worker.js', {
+            enabled: !isDevMode(),
+            registrationStrategy: 'registerWhenStable:30000'
+          }),
   ],
 });
